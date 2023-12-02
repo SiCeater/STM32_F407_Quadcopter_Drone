@@ -1,0 +1,16 @@
+
+#ifndef __GET_TRANSMISSION_H__
+#define __GET_TRANSMISSION_H__
+
+#include <stdint.h>
+#include "global.h"
+#include "usart.h"
+#include <stdio.h>
+#include <string.h>
+#include "debug.h"
+
+void init_transmission();
+void decode_trame();
+
+#endif /*__ GPIO_H__ */
+

@@ -1,0 +1,13 @@
+
+#ifndef __GYROSCOPE_H__
+#define __GYROSCOPE_H__
+
+#include "global.h"
+#include "spi.h"
+#include "gpio.h"
+#include "main.h"
+#include "debug.h"
+
+void check_gyro();
+
+#endif

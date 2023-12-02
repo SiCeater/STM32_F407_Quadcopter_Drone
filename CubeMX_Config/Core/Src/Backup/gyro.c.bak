@@ -1,0 +1,12 @@
+#include "gyroscope.h"
+// #include "spi.h"
+// #include "debug.h"
+
+void test_gyro()
+{
+    uint8_t TxData= 0b10000000|117;
+    uint8_t RxData=0;
+    HAL_SPI_TransmitReceive(&hspi1, &TxData, &RxData,1,1000);
+    if(RxData==0x71||RxData==0x68)
+        print_to_console("\nSPI gyro connected",19);
+}

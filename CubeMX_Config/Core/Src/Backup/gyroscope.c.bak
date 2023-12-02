@@ -1,0 +1,17 @@
+#include "gyroscope.h"
+
+void check_gyro()
+{
+    uint8_t TxData= 245;
+    uint8_t RxData=0;
+    HAL_GPIO_WritePin(gyro_CS_GPIO_Port,gyro_CS_Pin,GPIO_PIN_RESET);
+    HAL_SPI_Transmit(&hspi1, &TxData, 1,1000);
+    HAL_GPIO_WritePin(gyro_CS_GPIO_Port,gyro_CS_Pin,GPIO_PIN_SET);
+    HAL_GPIO_WritePin(gyro_CS_GPIO_Port,gyro_CS_Pin,GPIO_PIN_RESET);
+    HAL_SPI_Receive(&hspi1, &RxData, 1,1000);
+    HAL_GPIO_WritePin(gyro_CS_GPIO_Port,gyro_CS_Pin,GPIO_PIN_SET);
+    if(RxData==0x75)
+      if(debug)
+        print_to_console("\nSPI gyroscope        : detected",32);
+}
+
