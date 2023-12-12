@@ -9,7 +9,7 @@
 #include <string.h>
 #include "debug.h"
 
-void start_remote_RxTx();
+void start_remote_Rx();
 void decode_trame();
 
 #endif

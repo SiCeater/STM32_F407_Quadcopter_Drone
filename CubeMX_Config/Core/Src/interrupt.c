@@ -2,24 +2,28 @@
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if(htim==&htim6) // 10Hz
+    if(htim==&htim6) // 10Hz security loop
     {
-      connected_flag = false;
+      // connected_flag = false;
+      decode_trame();
+      //print_received_data();
     }
 
-    if((htim==&htim7)&&(remote_already_seen)) // 400Hz
+    if((htim==&htim7)&&(remote_already_seen)) // 400Hz control loop
     {
-      control();
+      // control();
     }
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  if(huart==&huart4)
+  if(huart==&huart1)
   {
-    TIM6->CNT=0;
-    remote_already_seen = true;
-    connected_flag = true;
-    HAL_UART_Receive_IT (&huart4, transmit, 7);
+    // TIM6->CNT=0;
+    // remote_already_seen = true;
+    // connected_flag = true;
+    test_uart2();
+    HAL_UART_Receive_IT (&huart1, transmit, 7);
+    onboard_led_on();
   }
 }

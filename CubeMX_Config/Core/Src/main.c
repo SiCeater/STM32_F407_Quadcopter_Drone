@@ -99,11 +99,10 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM1_Init();
   MX_TIM6_Init();
-  MX_TIM7_Init();
-  MX_UART5_Init();
   MX_SPI1_Init();
-  MX_UART4_Init();
-  
+  MX_TIM7_Init();
+  MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   init_motors();
@@ -113,7 +112,7 @@ int main(void)
   
   start_control_loop();
   start_security_loop();
-  start_remote_RxTx();
+  start_remote_Rx();
 
   /* USER CODE END 2 */
 

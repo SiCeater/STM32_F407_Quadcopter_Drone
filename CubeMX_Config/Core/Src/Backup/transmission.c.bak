@@ -1,10 +1,10 @@
 #include "transmission.h"
 
-void start_remote_RxTx()
+void start_remote_Rx()
 {
   HAL_UART_Receive_IT (&huart4, transmit, 7);
   if(debug)
-    print_to_console("\nremote Rx/Tx loop     : started",32);
+    print_to_console("\nremote Rx loop        : started",32);
 }
 
 

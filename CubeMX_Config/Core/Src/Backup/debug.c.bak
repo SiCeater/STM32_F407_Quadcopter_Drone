@@ -20,7 +20,7 @@ void test_uart4() // 38400 baud
     HAL_UART_Transmit(&huart4,&retour_ligne,1,1000);
 }
 
-void test_uart5() // 115200 baud
+void test_uart5() // 460800 baud
 {
     uint8_t test='U';
     uint8_t retour_ligne=10;
