@@ -11,6 +11,24 @@ void print_received_data()
   HAL_UART_Transmit(&huart2,(uint8_t*)tab_uart_debug,44,1000);
 }
 
+void print_imu_datas()
+{
+  char tab_imu_debug [50]={0};
+  sprintf(tab_imu_debug,"\nG_X:%6d G_Y:%6d G_Z:%6d ",GyroData[0],GyroData[1],GyroData[2]);
+  HAL_UART_Transmit(&huart2,(uint8_t*)tab_imu_debug,34,1000);
+  sprintf(tab_imu_debug,"\nA_X:%6d A_Y:%6d A_Z:%6d ",AccData[0],AccData[1],AccData[2]);
+  HAL_UART_Transmit(&huart2,(uint8_t*)tab_imu_debug,34,1000);
+  // sprintf(tab_imu_debug,"\nM_X:%5d M_Y:%5d M_Z:%5d ",MagData[0],MagData[1],MagData[2]);
+  // HAL_UART_Transmit(&huart2,(uint8_t*)tab_imu_debug,31,1000);
+}
+
+void print_imu_register(uint8_t register_value)
+{
+  char tab_imu_debug [32]={0};
+  sprintf(tab_imu_debug,"\nregister value received : %3d",register_value);
+  HAL_UART_Transmit(&huart2,(uint8_t*)tab_imu_debug,30,1000);
+}
+
 void test_uart1() // 38400 baud
 {
     uint8_t test='U';

@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -76,7 +77,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  
+  debug=true;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -97,22 +98,28 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
-  MX_TIM6_Init();
   MX_SPI1_Init();
   MX_TIM7_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
-  init_motors();
-  check_imu();
-  self_test_accel();
-  self_test_gyro();
+  print_to_console("\nstarting ...\n",14);
+
+  //ESC_init();
+
+  IMU_init();
+  HAL_TIM_Base_Start_IT(&htim6); // 1Hz IMU_get_datas loop 
+
+  //boucle qui attend STATE remote
+
+  //start_IMU_routine();
+  //start_remote_routine();
+  //start_control_loop();
   
-  start_control_loop();
-  start_security_loop();
-  start_remote_Rx();
 
   /* USER CODE END 2 */
 

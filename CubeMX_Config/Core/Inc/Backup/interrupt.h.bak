@@ -5,8 +5,9 @@
 #include "tim.h"
 #include "usart.h"
 #include "control.h"
+#include "imu.h"
+#include "debug.h"
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
 #endif

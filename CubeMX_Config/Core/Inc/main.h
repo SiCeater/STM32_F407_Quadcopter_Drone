@@ -61,6 +61,8 @@ void Error_Handler(void);
 #define onboard_led_GPIO_Port GPIOA
 #define gyro_CS_Pin GPIO_PIN_4
 #define gyro_CS_GPIO_Port GPIOA
+#define IMU_DATA_RDY_PIN_Pin GPIO_PIN_4
+#define IMU_DATA_RDY_PIN_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

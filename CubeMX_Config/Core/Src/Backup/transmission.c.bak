@@ -1,12 +1,9 @@
 #include "transmission.h"
 
-void start_remote_Rx()
+void start_remote_routine()
 {
-  HAL_UART_Receive_IT (&huart4, transmit, 7);
-  if(debug)
-    print_to_console("\nremote Rx loop        : started",32);
+  //demarrer le dma ici
 }
-
 
 /**
  * @brief fontion qui remet le tableau "transmit" en ordre apres la réception en cas de décallage d'indice

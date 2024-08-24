@@ -5,7 +5,7 @@
  * ils sont commandé par des signaux PWM en sortie du timer 1 de 490Hz 
  * plage de 1ms->2ms => 500->1000
  */
-void init_motors()
+void ESC_init()
 {
     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
@@ -33,7 +33,7 @@ void init_motors()
   * @param bottom_left_motor 
   * @param bottom_right_motor 
   */
-void set_motors(uint16_t top_left_motor, uint16_t top_right_motor, uint16_t bottom_left_motor, uint16_t bottom_right_motor)
+void ESC_setvalues(uint16_t top_left_motor, uint16_t top_right_motor, uint16_t bottom_left_motor, uint16_t bottom_right_motor)
 {
     TIM1->CCR1=500+top_left_motor;
     TIM1->CCR2=500+top_right_motor;
