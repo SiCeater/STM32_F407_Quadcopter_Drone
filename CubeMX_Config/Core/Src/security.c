@@ -1,16 +1,14 @@
 #include "security.h"
 
-
-
 void connection_lost_routine()
 {
     onboard_led_off();
 
     if (debug)
-        print_to_console("\nremote connection lost !\n",26);
+        print_to_console("\nremote connection lost !\n", 26);
 
     // faire des trucs pas en boucle
-    
+
     // while(telecommande deconnectée)
     // {
     //     set_motors(0,0,0,0);
@@ -19,5 +17,5 @@ void connection_lost_routine()
 
     // }
     onboard_led_on();
-    print_to_console("\nremote connection etablished !\n",32);
+    print_to_console("\nremote connection etablished !\n", 32);
 }

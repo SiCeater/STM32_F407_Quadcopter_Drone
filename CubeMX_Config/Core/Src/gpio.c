@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    gpio.c
-  * @brief   This file provides code for the configuration
-  *          of all used GPIO pins.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    gpio.c
+ * @brief   This file provides code for the configuration
+ *          of all used GPIO pins.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -33,12 +33,12 @@
 /* USER CODE END 1 */
 
 /** Configure pins as
-        * Analog
-        * Input
-        * Output
-        * EVENT_OUT
-        * EXTI
-*/
+ * Analog
+ * Input
+ * Output
+ * EVENT_OUT
+ * EXTI
+ */
 void MX_GPIO_Init(void)
 {
 
@@ -51,7 +51,7 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOE_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, onboard_led_Pin|gyro_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, onboard_led_Pin | gyro_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = onboard_led_Pin;
@@ -72,7 +72,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(IMU_DATA_RDY_PIN_GPIO_Port, &GPIO_InitStruct);
-
 }
 
 /* USER CODE BEGIN 2 */

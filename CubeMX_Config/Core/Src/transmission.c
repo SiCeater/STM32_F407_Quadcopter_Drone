@@ -2,7 +2,7 @@
 
 void start_remote_routine()
 {
-  //demarrer le dma ici
+  // demarrer le dma ici
 }
 
 /**
@@ -11,31 +11,31 @@ void start_remote_routine()
  */
 void decode_trame()
 {
-  uint8_t trame_ordonnee[7]={0,0,0,0,0,0,0};
-  uint8_t debut_trame=0;
+  uint8_t trame_ordonnee[7] = {0, 0, 0, 0, 0, 0, 0};
+  uint8_t debut_trame = 0;
 
   for (uint8_t i = 0; i < 7; i++)
   {
-    if (transmit[i]==250)
-      debut_trame=i;
+    if (transmit[i] == 250)
+      debut_trame = i;
   }
 
-  if (debut_trame!=0)
+  if (debut_trame != 0)
     for (uint8_t i = 0; i < 7; i++)
     {
-      if((debut_trame+i)>=7)
-        trame_ordonnee[i]=transmit[i-(7-debut_trame)];
+      if ((debut_trame + i) >= 7)
+        trame_ordonnee[i] = transmit[i - (7 - debut_trame)];
       else
-        trame_ordonnee[i]=transmit[i+debut_trame];
+        trame_ordonnee[i] = transmit[i + debut_trame];
     }
   else
     for (uint8_t i = 0; i < 7; i++)
     {
-      trame_ordonnee[i]=transmit[i];
+      trame_ordonnee[i] = transmit[i];
     }
 
   for (uint8_t i = 0; i < 6; i++)
   {
-    trame_decodee[i]=trame_ordonnee[i+1];
+    trame_decodee[i] = trame_ordonnee[i + 1];
   }
 }
