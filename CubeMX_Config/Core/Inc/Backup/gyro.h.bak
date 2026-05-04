@@ -1,8 +1,0 @@
-#ifndef __GYRO_H__
-#define __GYRO_H__
-
-#include "global.h"
-#include "spi.h"
-#include "debug.h"
-
-#endif
