@@ -57,7 +57,7 @@ Système de contrôle de vol avancé exploitant toute la puissance du **STM32F40
 - **Magnétomètre** : AK8963 (50 Hz)
 
 ### Communication
-- **Protocoles RC** : UART radio 2.4 GHz simple par module HC-05 avec réarrangement des trames
+- **Protocole RC** : UART radio 2.4 GHz simple par module HC-05 avec réarrangement des trames
 
 ### Sécurité et diagnostics
 - **Failsafe** : RX loss
