@@ -71,7 +71,7 @@ Système de contrôle de vol avancé exploitant toute la puissance du **STM32F40
 | Composant | Modèle | Spécifications | Notes |
 |-----------|--------|----------------|-------|
 | MCU | STM32F407VGT6 | 168 MHz, FPU, 1MB Flash | Discovery ou custom PCB |
-| IMU | MPU9250 | 8 kHz gyro, ±2000°/s | Magnétoçmètre intégré, bon rapport qualité/prix |
+| IMU | MPU9250 | 8 kHz gyro, ±2000°/s | Magnétomètre intégré, bon rapport qualité/prix |
 | ESC | 4× BLHeli | PWM 490Hz | temporaire |
 | Moteurs | 2212 920KV | 8045 props | lift |
 | RX | HC_05 | 2.4GHz bluetooth | portée limitée mais faible latence, temporaire |
